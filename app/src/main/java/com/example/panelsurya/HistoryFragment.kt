@@ -37,7 +37,7 @@ class HistoryFragment : Fragment() {
 
     private lateinit var dbRef : DatabaseReference
     private lateinit var sapiRecyclerView: RecyclerView
-    private lateinit var sapiArray: ArrayList<solar>
+    private lateinit var bateraiArray: ArrayList<solar>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,20 +70,20 @@ class HistoryFragment : Fragment() {
         sapiRecyclerView.layoutManager = LinearLayoutManager(context)
         sapiRecyclerView.setHasFixedSize(true)
 
-        sapiArray = arrayListOf<solar>()
+        bateraiArray = arrayListOf<solar>()
         getData()
     }
 
     private fun getData() {
-        dbRef = FirebaseDatabase.getInstance().getReference("Alvin_Alviano/history")
+        dbRef = FirebaseDatabase.getInstance().getReference("Juara/history")
         dbRef.addValueEventListener( object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
                     for (sapiSnapshot in snapshot.children){
-                        val lokasiSapi  = sapiSnapshot.getValue(solar::class.java)
-                        sapiArray.add(lokasiSapi!!)
+                        val value  = sapiSnapshot.getValue(solar::class.java)
+                        bateraiArray.add(value!!)
                     }
-                    var adapter = MyAdapter(sapiArray)
+                    var adapter = MyAdapter(bateraiArray)
                     sapiRecyclerView.adapter = adapter
 
                 }
