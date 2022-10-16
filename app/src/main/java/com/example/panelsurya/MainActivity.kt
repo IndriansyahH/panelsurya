@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val value = snapshot.value.toString()
                     val vin: Int = value.toInt()
-                    if (vin <= 10){
+                    if (vin in 9..10){
                         val notificationHelper = NotificationHelper(this@MainActivity)
                         notificationHelper.sendHighPriorityNotification("Battery <= 10v Mohon Hemat Penggunaan Battery",
                             "", MainActivity::class.java)
