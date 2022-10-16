@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/bottom_nav_bar"
+        android:layout_weight="1" />
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:fadingEdge="horizontal"
+        android:background="@color/white"
+        app:cnb_menuResource="@menu/navigation" />
+
+</LinearLayout>
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:background="#4E49F3"-->
+    <!--        android:minHeight="?attr/actionBarSize"-->
+    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+    <!--        >-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Testing"-->
+    <!--            android:textSize="20dp"-->
+    <!--            />-->
+
+    <!--    </androidx.appcompat.widget.Toolbar>-->
+
+    <!--    <com.google.android.material.tabs.TabLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/tablayout"-->
+    <!--        android:background="#4E49F3"-->
+    <!--        android:minHeight="?attr/actionBarSize"-->
+    <!--        android:layout_below="@+id/toolbar"-->
+    <!--        app:tabIndicator="@color/white"-->
+    <!--        app:tabUnboundedRipple="true"-->
+    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--        >-->
+
+    <!--    </com.google.android.material.tabs.TabLayout>-->
+
+    <!--    <androidx.viewpager.widget.ViewPager-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="fill_parent"-->
+    <!--        android:layout_below="@+id/tablayout"-->
+    <!--        android:id="@+id/pager">-->
+
+    <!--    </androidx.viewpager.widget.ViewPager>-->

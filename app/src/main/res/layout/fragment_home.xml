@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/tvJudul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="MAKSIMALISASI SISTEM PANEL SURYA PINTAR"
+        android:textColor="#133263"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHomePanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvJudul"
+            android:background="#3F9DC8"
+            android:padding="10dp"
+            app:cardBackgroundColor="#3F9DC8"
+            app:cardCornerRadius="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:id="@+id/imgPanelTilt"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:src="@drawable/solarcelltilt" />
+
+                <TextView
+                    android:id="@+id/tvTilt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/imgPanelTilt"
+                    android:text="Kemiringan Solar Panel: "
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvVoltval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imgPanelTilt"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/tvVolt"
+                    android:text="12 V"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgVoltPanel"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_below="@+id/imgPanelTilt"
+                    android:padding="10dp"
+                    android:src="@drawable/battery" />
+
+                <TextView
+                    android:id="@+id/tvVolt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imgPanelTilt"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/imgPanelTilt"
+                    android:text="Volt Solar Panel: "
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTiltval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/tvTilt"
+                    android:text="81°"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    <TableRow
+        android:id="@+id/tbRow"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cvHomePanel"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHomePanelVolt"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:background="#40CC47"
+            app:cardBackgroundColor="#40CC47"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/cvHomePanelRain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvHomePanel">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/imgPanelVolt"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:src="@drawable/battery" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Volt: "
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="13 V"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHomePanelRain"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_toEndOf="@+id/cvHomePanelVolt"
+            app:layout_constraintTop_toBottomOf="@id/cvHomePanel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="#40CC47"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="5dp"
+            app:cardBackgroundColor="#40CC47"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/imgPanelRain"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:src="@drawable/rain" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Rain Sensor: "
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRainSensorVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1022"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </TableRow>
+    <TableRow
+        android:id="@+id/tbRow2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tbRow"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHomePanelLdrBelakang"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/cvHomePanelVolt"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="#40CC47"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="5dp"
+            app:cardBackgroundColor="#40CC47"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/imgPanelLDRBlakang"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:src="@drawable/ldr" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="LDR Belakang: "
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/tvLdrBelakangVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="82"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHomePanelLdrDepan"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvHomePanelVolt"
+            android:background="#40CC47"
+            android:padding="10dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="5dp"
+            app:cardBackgroundColor="#40CC47"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/imgPanelLDRDpn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:src="@drawable/ldr" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="LDR Depan: "
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvLdrDepanVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="17"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </TableRow>
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cvHomePanelVolt"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="#40CC47"-->
+<!--        app:cardBackgroundColor="#40CC47"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:cardMaxElevation="5dp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/cvHomePanelRain"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cvHomePanel">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="10dp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgPanelVolt"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/battery" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Volt: "-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="12dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="13 V"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="12dp" />-->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cvHomePanelRain"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_below="@+id/cvHomePanel"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_toEndOf="@+id/cvHomePanelVolt"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cvHomePanel"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:background="#40CC47"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:cardMaxElevation="5dp"-->
+<!--        app:cardBackgroundColor="#40CC47"-->
+<!--        app:cardCornerRadius="10dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="10dp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgPanelRain"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/rain" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Rain Sensor: "-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="12dp"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="1022"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="12dp"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cvHomePanelLdrBelakang"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_below="@+id/cvHomePanelRain"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_toEndOf="@+id/cvHomePanelLdrDepan"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/cvHomePanelVolt"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:background="#40CC47"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:cardMaxElevation="5dp"-->
+<!--        app:cardBackgroundColor="#40CC47"-->
+<!--        app:cardCornerRadius="10dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="10dp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgPanelLDRBlakang"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/ldr" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="LDR Belakang: "-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="10dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="82"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="10dp" />-->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cvHomePanelLdrDepan"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_below="@+id/cvHomePanelVolt"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/cvHomePanelVolt"-->
+<!--        android:background="#40CC47"-->
+<!--        android:padding="10dp"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:cardMaxElevation="5dp"-->
+<!--        app:cardBackgroundColor="#40CC47"-->
+<!--        app:cardCornerRadius="10dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="10dp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgPanelLDRDpn"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/ldr" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="LDR Depan: "-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="10dp"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="17"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="10dp"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+    <TextView
+        android:id="@+id/tvControllLampu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tbRow2"
+        android:layout_marginTop="20dp"
+        android:text="Controll Lampu"
+        android:textColor="#133263"
+        android:textStyle="bold"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="5dp"
+        android:layout_margin="10dp"
+        android:id="@+id/cv"
+        app:layout_constraintTop_toBottomOf="@id/tvControllLampu"
+        >
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/mTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lampu 1"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mTitlestat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mTitle"
+                android:text="Lampu Keandaan mati"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnLampu"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded_btn"
+                android:gravity="center"
+                android:text="off"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="5dp"
+        android:layout_margin="10dp"
+        android:id="@+id/cv2"
+        app:layout_constraintTop_toBottomOf="@+id/cv"
+        >
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/mTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lampu 2"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mTitlestat2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mTitle2"
+                android:text="Lampu Keandaan mati"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnLampu2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/rounded_btn"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:text="off"
+                android:textColor="@color/black"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="home"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:gravity="center"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="5dp"
+        android:layout_margin="10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgItem"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:backgroundTint="@color/black"
+                android:layout_centerVertical="true"
+                android:src="@drawable/solarenergy" />
+
+            <TextView
+                android:id="@+id/tvIdSapi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@+id/imgItem"
+                android:textColor="@color/black"
+                android:text="Time: " />
+            <TextView
+                android:id="@+id/tvTimeHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No detected"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/tvIdSapi"
+                />
+
+            <TextView
+                android:id="@+id/DetakJantungSapi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvIdSapi"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/imgItem"
+                android:text="Volt: "
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvVoltHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvIdSapi"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/DetakJantungSapi"
+                android:text="null"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/DetakJantungSapiValBpm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvIdSapi"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/tvVoltHistory"
+                android:text="V"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/SuhuSapi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DetakJantungSapi"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/imgItem"
+                android:text="Kemiringan: "
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvKemiringanHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DetakJantungSapi"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/SuhuSapi"
+                android:text="null"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/SuhuSapiValCel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DetakJantungSapi"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/tvKemiringanHistory"
+                android:text="°"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvLocaion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SuhuSapi"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/imgItem"
+                android:text="Sensor Hujan: "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvHujanHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/tvLocaion"
+                android:layout_below="@id/tvKemiringanHistory"
+                android:text="null"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvLdrDepan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHujanHistory"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/imgItem"
+                android:text="LDR Depan: "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvLdrDepanHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/tvLocaion"
+                android:layout_below="@id/tvHujanHistory"
+                android:text="null"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvLdrBelakang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLdrDepanHistory"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/imgItem"
+                android:text="LDR Belakang: "
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvLdrBelakangHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/tvLdrBelakang"
+                android:layout_below="@id/tvLdrDepanHistory"
+                android:text="null"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
